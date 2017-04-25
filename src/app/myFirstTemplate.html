@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+
+<h2>My favorite hero is {{hero}}</h2>
+
+<h2>Heroes list:</h2>
+
+<li *ngFor="let onehero of heroes">
+  {{ onehero.name }} (id:{{ onehero.id }})
+</li>
