@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {Hero} from './hero';
+import {Hero} from './cities/hero';
 
 @Component({
   selector: 'my-app',
-  templateUrl: `app/myFirstTemplate.html`,
+  templateUrl: `app/myFirstTemplate.html`
 })
 export class AppComponent  {
   title = 'Tour of Heroes';

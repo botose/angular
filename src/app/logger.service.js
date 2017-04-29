@@ -6,24 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var hero_1 = require("./cities/hero");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Heroes';
-        this.hero = 'Windstorm';
-        this.heroes = [
-            new hero_1.Hero(0, 'Solomon'),
-            new hero_1.Hero(1, 'Peter'),
-            new hero_1.Hero(2, 'Judas')
-        ];
+var Logger = (function () {
+    function Logger() {
+        this.logs = []; // capture logs for testing
     }
-    return AppComponent;
+    Logger.prototype.log = function (message) {
+        this.logs.push(message);
+        console.log(message);
+    };
+    return Logger;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: "app/myFirstTemplate.html"
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+Logger = __decorate([
+    core_1.Injectable()
+], Logger);
+exports.Logger = Logger;
+//# sourceMappingURL=logger.service.js.map

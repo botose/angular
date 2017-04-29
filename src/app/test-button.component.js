@@ -6,24 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var hero_1 = require("./cities/hero");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour of Heroes';
-        this.hero = 'Windstorm';
-        this.heroes = [
-            new hero_1.Hero(0, 'Solomon'),
-            new hero_1.Hero(1, 'Peter'),
-            new hero_1.Hero(2, 'Judas')
-        ];
+var ClickMeComponent = (function () {
+    function ClickMeComponent() {
+        this.clickMessage = '';
     }
-    return AppComponent;
+    ClickMeComponent.prototype.onClickMe = function () {
+        this.clickMessage = 'You are my hero!';
+    };
+    return ClickMeComponent;
 }());
-AppComponent = __decorate([
+ClickMeComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: "app/myFirstTemplate.html"
+        selector: 'test-button',
+        templateUrl: "app/test-button.html"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ClickMeComponent);
+exports.ClickMeComponent = ClickMeComponent;
+//# sourceMappingURL=test-button.component.js.map

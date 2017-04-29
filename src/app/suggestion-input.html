@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>City Form</h1>
+  <form #cityForm="ngForm" (ngSubmit)="onSubmit();">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input #box type="text" class="form-control" id="name" required
+             [(ngModel)]="model.name" name="name"
+             (keyup)="onKey(box.value)"
+             #name="ngModel">
+      <p>Existing values: {{suggestion}}</p>
+    </div>
+    <div [hidden]="name.valid || name.pristine || name.untouched"
+         class="alert alert-danger">
+      Name is required
+    </div>
+
+    <div class="form-group">
+      <label for="postNumber">Post number</label>
+      <input type="text" class="form-control" id="postNumber"
+             [(ngModel)]="model.postNumber" name="postNumber"
+             #postNumber="ngModel">
+    </div>
+    <div [hidden]="postNumber.valid || postNumber.pristine || postNumber.untouched"
+         class="alert alert-danger">
+      Post number is required
+    </div>
+
+    <div class="form-group">
+      <label for="type">City Type</label>
+      <select class="form-control" id="type" required
+              [(ngModel)]="model.type" name="type"
+              #type="ngModel">
+        <option *ngFor="let type of cityTypes" [value]="type">{{type}}</option>
+      </select>
+    </div>
+    <div [hidden]="type.valid || type.pristine || type.untouched"
+         class="alert alert-danger">
+      Type is required
+    </div>
+
+    <button type="submit" class="btn btn-success"
+            (click)="onEnter(box.value);
+              cityForm.reset();"
+            [disabled]="!cityForm.form.valid">Submit</button>
+  </form>
+</div>
+{{diagnostic}}

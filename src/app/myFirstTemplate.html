@@ -4,6 +4,22 @@
 
 <h2>Heroes list:</h2>
 
+<p *ngIf="heroes.length > 3">There are many heroes!</p>
+
 <li *ngFor="let onehero of heroes">
-  {{ onehero.name }} (id:{{ onehero.id }})
+  <div>
+    <label>name: </label>
+    <!--<input [(ngModel)]="onehero.name" placeholder="name">-->
+  </div>
+  <div>(id:{{ onehero.id }})</div>
 </li>
+
+<div>
+  <label>We should test the input button feature</label>
+  <test-button>Button should be loaded</test-button>
+</div>
+
+<div>
+  <label>Let's test the input field which gives suggestions</label>
+  <suggestion-input>This is a suggestion input field</suggestion-input>
+</div>
