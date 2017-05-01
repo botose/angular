@@ -21,8 +21,9 @@ var SuggestionInput = (function () {
     }
     SuggestionInput.prototype.onKey = function (value) {
         this.suggestion = '';
-        for (var index in this.cities) {
-            var cityName = this.cities[index].name;
+        for (var _i = 0, _a = this.cities; _i < _a.length; _i++) {
+            var city = _a[_i];
+            var cityName = city.name;
             if (cityName.includes(value)) {
                 if (this.suggestion === '') {
                     this.suggestion += ' ' + cityName;

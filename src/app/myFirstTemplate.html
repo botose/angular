@@ -1,25 +1,37 @@
-<h1>{{title}}</h1>
+<div id="first-template-section" [style.color]="color">
+  <h1>{{title}}</h1>
 
-<h2>My favorite hero is {{hero}}</h2>
+  <h2>My favorite hero is {{hero}}</h2>
 
-<h2>Heroes list:</h2>
+  <h2>Heroes list:</h2>
 
-<p *ngIf="heroes.length > 3">There are many heroes!</p>
+  <p *ngIf="heroes.length > 3">There are many heroes!</p>
 
-<li *ngFor="let onehero of heroes">
+  <li *ngFor="let onehero of heroes">
+    <div>
+      <label>name: </label>
+      <!--<input [(ngModel)]="onehero.name" placeholder="name">-->
+    </div>
+    <div>(id:{{ onehero.id }})</div>
+  </li>
+
   <div>
-    <label>name: </label>
-    <!--<input [(ngModel)]="onehero.name" placeholder="name">-->
+    <label>We should test the input button feature</label>
+    <test-button>Button should be loaded</test-button>
   </div>
-  <div>(id:{{ onehero.id }})</div>
-</li>
 
-<div>
-  <label>We should test the input button feature</label>
-  <test-button>Button should be loaded</test-button>
+  <div>
+    <label>Let's test the input field which gives suggestions</label>
+    <suggestion-input>This is a suggestion input field</suggestion-input>
+  </div>
 </div>
 
-<div>
-  <label>Let's test the input field which gives suggestions</label>
-  <suggestion-input>This is a suggestion input field</suggestion-input>
-</div>
+<form #colorSelector="ngForm">
+  <div class="form-group" style="width: 10%">
+    <label for="color">Text Color</label>
+    <select class="form-control" id="color" name="color" (click)="colorChange($event.target.value)">
+      <option *ngFor="let color of selectableColors" [value]="color">
+        {{color}}</option>
+    </select>
+  </div>
+</form>

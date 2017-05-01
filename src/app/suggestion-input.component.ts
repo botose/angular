@@ -20,8 +20,9 @@ export class SuggestionInput {
 
   onKey(value: string) { // without type info
     this.suggestion = '';
-    for (let index in this.cities) {
-      const cityName = this.cities[index].name;
+
+    for (const city of this.cities) {
+      const cityName = city.name;
       if (cityName.includes(value)) {
         if (this.suggestion === '') {
           this.suggestion += ' ' + cityName;
