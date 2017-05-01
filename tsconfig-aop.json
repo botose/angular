@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+
+  "files": [
+    "src/app/cities/City.ts",
+    "src/app/cities/hero.ts",
+    "src/app/cities/mock-cities.ts",
+    "src/app/city.service.provider.ts",
+    "src/app/city.service.ts",
+    "src/app/logger.service.ts",
+    "src/app/suggestion-input.component.ts",
+    "src/app/test-button.component.ts",
+    "src/main.ts",
+    "src/app/app.module.ts",
+    "src/app/app.component.ts"
+  ],
+
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit" : true
+  }
+}
