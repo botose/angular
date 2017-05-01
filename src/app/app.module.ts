@@ -5,13 +5,13 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { ClickMeComponent }  from './test-button.component';
 import { SuggestionInput } from './suggestion-input.component';
-import {CityService} from './city.service';
-import {Logger} from './logger.service';
+import { Logger } from './logger.service';
+import { cityServiceProvider } from './city.service.provider';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, ClickMeComponent, SuggestionInput ],
-  providers: [ CityService, Logger ],
+  providers: [ Logger, cityServiceProvider ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

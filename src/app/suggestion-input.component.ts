@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {City} from './cities/City';
-import {CityService} from "./city.service";
+import {CityService} from './city.service';
 
 @Component({
   selector: 'suggestion-input',

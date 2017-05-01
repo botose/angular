@@ -12,10 +12,14 @@ var core_1 = require("@angular/core");
 var mock_cities_1 = require("./cities/mock-cities");
 var logger_service_1 = require("./logger.service");
 var CityService = (function () {
-    function CityService(logger) {
+    function CityService(logger, isMocked) {
         var _this = this;
         this.logger = logger;
+        this.isMocked = isMocked;
         this.getCities = function () {
+            if (!_this.isMocked) {
+                _this.logger.log('Data should be not mocked');
+            }
             _this.logger.log('Incoming city data');
             return mock_cities_1.CITIES;
         };
@@ -24,7 +28,7 @@ var CityService = (function () {
 }());
 CityService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [logger_service_1.Logger])
+    __metadata("design:paramtypes", [logger_service_1.Logger, Boolean])
 ], CityService);
 exports.CityService = CityService;
 //# sourceMappingURL=city.service.js.map
